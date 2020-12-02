@@ -11,34 +11,30 @@ import java.util.Scanner;
  *
  * @author DELL
  */
-public class Summax {
+public class bai2 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-       Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập số phần tử của mảng: ");
         int n = scanner.nextInt();
         int[] arr = new int[n];
         System.out.print("Nhập các phần tử của mảng: \n");
         for (int i = 0; i < n; i++) {
-            System.out.printf("arr5[%d] = ", i);
+            System.out.printf("arr[%d] = ", i);
             arr[i] = scanner.nextInt();
         }
-        int max = arr[0] + arr[1];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                int sum = arr[i] + arr[j];
-                if (max < sum) {
-                    max = sum;
+        int min = arr[0] - arr[1];
+        for (int j = 0; j < arr.length; j++) {
+            for (int k = j + 1; k < arr.length; k++) {
+                int brand = arr[j] - arr[k];
+                if (Math.abs(brand) < Math.abs(min)) {
+                    min = brand;
+                    System.out.println(arr[j] + " " + arr[k]);
                 }
-            }
-        }
-        System.out.println("Tổng lớn nhất của mảng :" + max);        
-    }
 
-      
-        // TODO code application logic here
+            }
+
+        }
+
     }
-    
+}
